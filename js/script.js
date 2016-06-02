@@ -4,10 +4,16 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log('[onload] ');
-    img = document.getElementById('orig');
-    var sys = new System();
-    sys.init(img);
-    sys.start(31);
+    var srcImg = document.getElementById('initState');
+    var canvas = document.getElementById('surface');
+    var draw = new Draw(canvas, 50, 50);
+    draw.fill(127);
+    draw.load(srcImg);
+    //draw.paint();
+
+    //var sys = new System();
+    //sys.init(img);
+    //sys.start(31);
 });
     
 
