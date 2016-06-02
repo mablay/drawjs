@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "three.js": "^0.76.0",
-    "paper": "^0.9.25"
+    "paper": "^0.9.25",
+    "pixi.js": "^3.0.11"
   }
 }
