@@ -4,15 +4,18 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log('[onload] ');
+
+    var size = 50;
     var srcImg = document.getElementById('initState');
     var canvas = document.getElementById('surface');
-    var draw = new Draw(canvas, 50, 50);
-    draw.fill(127);
+    var draw = new Draw(canvas, size, size);
     draw.load(srcImg);
-    //draw.paint();
+    //draw.fill(127);
 
-    //var sys = new System();
-    //sys.init(img);
+    var sys = new Grid(size, size);
+    sys.init(draw.getPixels());
+    sys.invert();
+    draw.setPixels(sys.toImageData());
     //sys.start(31);
 });
     
