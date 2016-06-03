@@ -10,15 +10,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var canvas = document.getElementById('surface');
     var draw = new Draw(canvas, size, size);
     draw.load(srcImg);
-    //draw.fill(127);
 
     var sys = new Grid(size, size);
     sys.init(draw.getPixels());
+    draw.fill(127);
     sys.invert();
-    draw.setPixels(sys.toImageData());
-    //sys.start(31);
+    draw.drawGrayFloat(sys.nodes);
+    sys.start(31);
 });
-    
 
 
 
